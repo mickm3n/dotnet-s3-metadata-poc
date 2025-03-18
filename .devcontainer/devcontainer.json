@@ -6,8 +6,14 @@
     "AWS_SECRET_ACCESS_KEY": "${localEnv:AWS_SECRET_ACCESS_KEY}",
     "AWS_DEFAULT_REGION": "${localEnv:AWS_DEFAULT_REGION}"
   },
-  "extensions": [
-    "ms-dotnettools.csharp"
-  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.csdevkit"
+      ]
+    }
+  },
   "postCreateCommand": "dotnet restore"
 }
