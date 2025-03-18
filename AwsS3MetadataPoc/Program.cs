@@ -63,7 +63,7 @@ namespace AwsS3MetadataTest
             request.Metadata.Add("notes", PrepareMetadataValue("ASCII Only"));
 
             PutObjectResponse response = await s3Client.PutObjectAsync(request);
-            Console.WriteLine("Complete Upload Objects。");
+            Console.WriteLine("Complete Upload Objects");
         }
 
         private static async Task CheckMetadata(string key)
@@ -75,7 +75,7 @@ namespace AwsS3MetadataTest
             };
 
             GetObjectMetadataResponse response = await s3Client.GetObjectMetadataAsync(request);
-            Console.WriteLine("HeadObject Metadata：");
+            Console.WriteLine("HeadObject Metadata: ");
             foreach (var metaKey in response.Metadata.Keys)
             {
                 string value = response.Metadata[metaKey];
@@ -111,7 +111,7 @@ namespace AwsS3MetadataTest
             using (GetObjectResponse response = await s3Client.GetObjectAsync(request))
             {
                 Console.WriteLine("Get Object Content Length: {0}", response.ContentLength);
-                Console.WriteLine("GetObject Metadata：");
+                Console.WriteLine("GetObject Metadata: ");
                 foreach (var metaKey in response.Metadata.Keys)
                 {
                     string value = response.Metadata[metaKey];
